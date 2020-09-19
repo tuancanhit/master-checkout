@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="directory_country_city" resource="default" engine="innodb" comment="Directory Country City">
+        <column xsi:type="int"     name="entity_id"   nullable="false" comment="City Id"    padding="10"     unsigned="true"  identity="true" />
+        <column xsi:type="int"     name="region_id"   nullable="false" comment="Region Id"  padding="10"     unsigned="true"                  />
+        <column xsi:type="varchar" name="code"        nullable="true"  comment="City code"  length="32"                                       />
+        <column xsi:type="varchar" name="name"        nullable="true"  comment="City Name"  length="255"                                      />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <index referenceId="DIRECTORY_COUNTRY_CITY_REGION_ID" indexType="btree">
+            <column name="region_id"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="DIRECTORY_COUNTRY_CITY_TO_REGION" table="directory_country_city" column="region_id" referenceTable="directory_country_region" referenceColumn="region_id" onDelete="CASCADE"/>
+    </table>
+    <table name="directory_country_district" resource="default" engine="innodb" comment="Directory Country District">
+        <column xsi:type="int"     name="entity_id" nullable="false" comment="District Id"   padding="10"     unsigned="true"  identity="true" />
+        <column xsi:type="int"     name="city_id"   nullable="false"   comment="City Id"       padding="10"     unsigned="true"                  />
+        <column xsi:type="varchar" name="code"      nullable="true"  comment="District code" length="32"                                       />
+        <column xsi:type="varchar" name="name"      nullable="true"  comment="District Name" length="255"                                      />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <index referenceId="DIRECTORY_COUNTRY_DISTRICT_CITY_ID" indexType="btree">
+            <column name="city_id"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="DIRECTORY_COUNTRY_DISTRICT_TO_CITY" table="directory_country_district" column="city_id" referenceTable="directory_country_city" referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+    <table name="directory_country_ward" resource="default" engine="innodb" comment="Directory Country Ward">
+        <column xsi:type="int"     name="entity_id"   nullable="false" comment="Ward Id"     padding="10" unsigned="true" identity="true" />
+        <column xsi:type="int"     name="district_id" nullable="false" comment="District Id" padding="10" unsigned="true"                  />
+        <column xsi:type="varchar" name="code"        nullable="true"  comment="Ward code"   length="32"                                       />
+        <column xsi:type="varchar" name="name"        nullable="true"  comment="Ward Name"   length="255"                                      />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <index referenceId="DIRECTORY_COUNTRY_WARD_DISTRICT_ID" indexType="btree">
+            <column name="district_id"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="DIRECTORY_COUNTRY_WARD_TO_DISTRICT" table="directory_country_ward" column="district_id" referenceTable="directory_country_district" referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+</schema>

@@ -4,6 +4,7 @@
     <module name="NTC_Directory">
         <sequence>
             <module name="NTC_CoreHelper"/>
+            <module name="Magento_Directory"/>
         </sequence>
     </module>
 </config>

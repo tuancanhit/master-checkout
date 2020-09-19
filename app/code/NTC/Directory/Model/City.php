@@ -12,8 +12,16 @@ namespace NTC\Directory\Model;
  * Class City
  * @package NTC\Directory\Model
  */
-class City implements \NTC\Directory\Api\Data\CityInterface
+class City extends \Magento\Framework\Model\AbstractModel implements \NTC\Directory\Api\Data\CityInterface
 {
+
+    /**
+     * @inheritDoc
+     */
+    protected function _construct()
+    {
+        $this->_init(\NTC\Directory\Model\ResourceModel\City::class);
+    }
 
     /**
      * @inheritDoc

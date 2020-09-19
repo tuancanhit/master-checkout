@@ -14,5 +14,19 @@ namespace NTC\Directory\Api;
  */
 interface CityRepositoryInterface
 {
+    /**
+     * @return \NTC\Directory\Model\ResourceModel\City\Collection
+     */
+    public function getList();
 
+    /**
+     * @param int $id
+     * @return \NTC\Directory\Model\City
+     */
+    public function getById(int $id);
+
+    /**
+     * @return \NTC\Directory\Model\City
+     */
+    public function create();
 }

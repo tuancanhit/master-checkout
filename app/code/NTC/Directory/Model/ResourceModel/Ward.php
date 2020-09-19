@@ -12,7 +12,13 @@ namespace NTC\Directory\Model\ResourceModel;
  * Class Ward
  * @package NTC\Directory\Model\ResourceModel
  */
-class Ward
+class Ward extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
-
+    /**
+     * @inheritDoc
+     */
+    protected function _construct()
+    {
+        $this->_init('directory_country_ward','entity_id');
+    }
 }

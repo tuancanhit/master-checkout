@@ -12,8 +12,15 @@ namespace NTC\Directory\Model;
  * Class Ward
  * @package NTC\Directory\Model
  */
-class Ward implements \NTC\Directory\Api\Data\WardInterface
+class Ward extends \Magento\Framework\Model\AbstractModel implements \NTC\Directory\Api\Data\WardInterface
 {
+    /**
+     * @inheritDoc
+     */
+    protected function _construct()
+    {
+        $this->_init(\NTC\Directory\Model\ResourceModel\Ward::class);
+    }
 
     /**
      * @inheritDoc

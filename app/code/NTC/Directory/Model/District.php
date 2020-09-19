@@ -12,8 +12,15 @@ namespace NTC\Directory\Model;
  * Class District
  * @package NTC\Directory\Model
  */
-class District implements \NTC\Directory\Api\Data\DistrictInterface
+class District extends \Magento\Framework\Model\AbstractModel implements \NTC\Directory\Api\Data\DistrictInterface
 {
+    /**
+     * @inheritDoc
+     */
+    protected function _construct()
+    {
+        $this->_init(\NTC\Directory\Model\ResourceModel\District::class);
+    }
 
     /**
      * @inheritDoc

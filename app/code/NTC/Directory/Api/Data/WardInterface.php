@@ -15,7 +15,7 @@ namespace NTC\Directory\Api\Data;
 interface WardInterface
 {
     const ENTITY_ID   = 'entity_id';
-    const DISTRICT_ID = 'city_id';
+    const DISTRICT_ID = 'district_id';
     const CODE        = 'code';
     const NAME        = 'name';
 

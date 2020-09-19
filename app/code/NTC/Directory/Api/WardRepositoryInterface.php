@@ -14,5 +14,19 @@ namespace NTC\Directory\Api;
  */
 interface WardRepositoryInterface
 {
+    /**
+     * @return \NTC\Directory\Model\ResourceModel\Ward\Collection
+     */
+    public function getList();
 
+    /**
+     * @param int $id
+     * @return \NTC\Directory\Model\Ward
+     */
+    public function getById(int $id);
+
+    /**
+     * @return \NTC\Directory\Model\Ward
+     */
+    public function create();
 }

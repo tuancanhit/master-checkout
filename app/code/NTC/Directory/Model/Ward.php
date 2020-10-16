@@ -26,7 +26,7 @@ class Ward extends \Magento\Framework\Model\AbstractModel implements \NTC\Direct
      */
     public function getId()
     {
-        // TODO: Implement getId() method.
+        return $this->getData(self::ENTITY_ID);
     }
 
     /**
@@ -34,7 +34,7 @@ class Ward extends \Magento\Framework\Model\AbstractModel implements \NTC\Direct
      */
     public function getDistrictId()
     {
-        // TODO: Implement getDistrictId() method.
+        return $this->getData(self::DISTRICT_ID);
     }
 
     /**
@@ -42,7 +42,7 @@ class Ward extends \Magento\Framework\Model\AbstractModel implements \NTC\Direct
      */
     public function getCode()
     {
-        // TODO: Implement getCode() method.
+        return $this->getData(self::CODE);
     }
 
     /**
@@ -50,7 +50,7 @@ class Ward extends \Magento\Framework\Model\AbstractModel implements \NTC\Direct
      */
     public function getName()
     {
-        // TODO: Implement getName() method.
+        return $this->getData(self::NAME);
     }
 
     /**
@@ -58,7 +58,8 @@ class Ward extends \Magento\Framework\Model\AbstractModel implements \NTC\Direct
      */
     public function setDistrictId(int $districtId)
     {
-        // TODO: Implement setDistrictId() method.
+        $this->setData(self::DISTRICT_ID, $districtId);
+        return $this;
     }
 
     /**
@@ -66,7 +67,8 @@ class Ward extends \Magento\Framework\Model\AbstractModel implements \NTC\Direct
      */
     public function setCode(string $code)
     {
-        // TODO: Implement setCode() method.
+        $this->setData(self::CODE, $code);
+        return $this;
     }
 
     /**
@@ -74,6 +76,7 @@ class Ward extends \Magento\Framework\Model\AbstractModel implements \NTC\Direct
      */
     public function setName(string $name)
     {
-        // TODO: Implement setName() method.
+        $this->setData(self::NAME, $name);
+        return $this;
     }
 }

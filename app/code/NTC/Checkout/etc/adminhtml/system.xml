@@ -29,7 +29,6 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <depends>
                         <field id="enable">1</field>
-                        <field id="region">1</field>
                     </depends>
                 </field>
                 <field id="district" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
@@ -45,6 +44,7 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <depends>
                         <field id="enable">1</field>
+                        <field id="city">1</field>
                         <field id="district">1</field>
                     </depends>
                 </field>

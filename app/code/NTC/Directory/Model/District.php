@@ -26,7 +26,7 @@ class District extends \Magento\Framework\Model\AbstractModel implements \NTC\Di
      */
     public function getId()
     {
-        // TODO: Implement getId() method.
+        return $this->getData(self::ENTITY_ID);
     }
 
     /**
@@ -34,7 +34,7 @@ class District extends \Magento\Framework\Model\AbstractModel implements \NTC\Di
      */
     public function getCityId()
     {
-        // TODO: Implement getCityId() method.
+        return $this->getData(self::CITY_ID);
     }
 
     /**
@@ -42,7 +42,7 @@ class District extends \Magento\Framework\Model\AbstractModel implements \NTC\Di
      */
     public function getCode()
     {
-        // TODO: Implement getCode() method.
+        return $this->getData(self::CODE);
     }
 
     /**
@@ -50,7 +50,7 @@ class District extends \Magento\Framework\Model\AbstractModel implements \NTC\Di
      */
     public function getName()
     {
-        // TODO: Implement getName() method.
+        return $this->getData(self::NAME);
     }
 
     /**
@@ -58,7 +58,8 @@ class District extends \Magento\Framework\Model\AbstractModel implements \NTC\Di
      */
     public function setCityId(int $cityId)
     {
-        // TODO: Implement setCityId() method.
+        $this->setData(self::CITY_ID, $cityId);
+        return $this;
     }
 
     /**
@@ -66,7 +67,8 @@ class District extends \Magento\Framework\Model\AbstractModel implements \NTC\Di
      */
     public function setCode(string $code)
     {
-        // TODO: Implement setCode() method.
+        $this->setData(self::CODE, $code);
+        return $this;
     }
 
     /**
@@ -74,6 +76,7 @@ class District extends \Magento\Framework\Model\AbstractModel implements \NTC\Di
      */
     public function setName(string $name)
     {
-        // TODO: Implement setName() method.
+        $this->setData(self::NAME, $name);
+        return $this;
     }
 }

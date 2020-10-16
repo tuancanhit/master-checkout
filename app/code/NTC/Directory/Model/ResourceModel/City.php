@@ -1,6 +1,5 @@
 <?php
 /**
- *  * Created by PhpStorm.
  * @author: William Nguyen (tuancanhit@gmail.com)
  * Date: 9/19/20
  * Time: 14:37
@@ -19,6 +18,6 @@ class City extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
      */
     protected function _construct()
     {
-        $this->_init('directory_country_city','entity_id');
+        $this->_init('directory_country_city', 'entity_id');
     }
 }

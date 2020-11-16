@@ -48,12 +48,12 @@
                         <field id="district">1</field>
                     </depends>
                 </field>
-                <field id="region_option" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Region Option</label>
-                    <source_model>NTC\Directory\Model\Config\Source\RegionConfigOption</source_model>
+                <field id="default_region" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Default Region</label>
+                    <source_model>NTC\Checkout\Model\Config\Source\RegionConfigOption</source_model>
                     <depends>
                         <field id="enable">1</field>
-                        <field id="region">1</field>
+                        <field id="region">0</field>
                     </depends>
                 </field>
             </group>

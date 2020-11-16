@@ -6,7 +6,8 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference type="NTC\Directory\Api\CityRepositoryInterface"     for="NTC\Directory\Model\CityRepository"/>
-    <preference type="NTC\Directory\Api\DistrictRepositoryInterface" for="NTC\Directory\Model\DistrictRepository"/>
-    <preference type="NTC\Directory\Api\WardCityRepositoryInterface" for="NTC\Directory\Model\WardRepository"/>
+    <preference for="NTC\Directory\Api\RegionRepositoryInterface"   type="NTC\Directory\Model\RegionRepository"/>
+    <preference for="NTC\Directory\Api\CityRepositoryInterface"     type="NTC\Directory\Model\CityRepository"/>
+    <preference for="NTC\Directory\Api\DistrictRepositoryInterface" type="NTC\Directory\Model\DistrictRepository"/>
+    <preference for="NTC\Directory\Api\WardCityRepositoryInterface" type="NTC\Directory\Model\WardRepository"/>
 </config>
